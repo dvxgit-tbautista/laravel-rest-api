@@ -14,19 +14,13 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-        // Show all posts
     public function index()
     {
-        // $posts = Post::all();
+        $posts = Post::all();
 
-        // return response()->json([
-        //     'status' => true,
-        //     'posts' => $posts
-        // ]);
-
-        return view('posts.index', [
-            'posts' => Post::all()
+        return response()->json([
+            'status' => true,
+            'posts' => $posts
         ]);
     }
 
